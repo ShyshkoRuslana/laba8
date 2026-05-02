@@ -1,16 +1,32 @@
 #include <iostream>
+#include "array.h"
+#include "vector.h"
+#include "deque.h"
+using namespace std;
+int main (){
+    cout << "--Зсув елементів--" << endl;
+    array<int,6> arr = {1,2,3,4,5,6};
+    shift(arr,3);
+    print(arr);
 
-// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-int main() {
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the <b>lang</b> variable name to see how CLion can help you rename it.
-    auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
+    cout << "--Вставка одного вектора в інший--" << endl;
+    vector<int> v1 = {1,2,3,4};
+    vector<int> v2 = {9,9,9};
+    insert(v1,v2,1);
+    print(v1);
 
-    for (int i = 1; i <= 5; i++) {
-        // TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        std::cout << "i = " << i << std::endl;
-    }
+    cout << "--Видалення середнього елмента--" << endl;
+    cout << "Парна кількість" << endl;
+    deque<int> d1 = {1, 2, 3, 4, 5, 6, 7, 8};
+    print(d1);
+    remove(d1);
+    print(d1);
+    cout << "Непарна кількість" << endl;
+    deque<int> d2 = {1,2,3,4,5};
+    print(d2);
+    remove(d2);
+    print(d2);
 
     return 0;
-    // TIP See CLion help at <a href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>. Also, you can try interactive lessons for CLion by selecting 'Help | Learn IDE Features' from the main menu.
+
 }
