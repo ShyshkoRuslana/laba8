@@ -3,4 +3,8 @@ project(laba8)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(laba8 main.cpp)
+add_executable(laba8 main.cpp
+        array.h
+        vector.h
+        deque.cpp
+        deque.h)
